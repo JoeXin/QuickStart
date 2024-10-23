@@ -1,0 +1,13 @@
+{
+  "name": "default",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@ohs/learning":"file:../../features/learning",
+    "@ohs/map": "file:../../features/map",
+    "@ohs/quickstart": "file:../../features/quickstart"
+  }
+}
