@@ -2,7 +2,8 @@
 import { QuickStartPage } from '@ohs/quickstart'
 import { CourseLearning} from '@ohs/learning'
 
-import { KnowledgeMap} from '@ohs/map'
+import { KnowledgeMap, KnowledgeMapContent} from '@ohs/map'
+
 
 @Entry
 @Component
@@ -12,7 +13,8 @@ struct Index {
     Column(){
       //QuickStartPage()
       //CourseLearning()
-      KnowledgeMap()
+      // KnowledgeMap()
+  KnowledgeMapContent()
     }
     .backgroundColor('#F1F3F5')
     .padding({top:36,bottom:28})
