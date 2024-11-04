@@ -13,7 +13,7 @@ export struct CourseLearning {
 
       Web({ src: $rawfile('course_learning/index.html'), controller: this.webviewController })
         .domStorageAccess(true)
-        .height(100)
+        //.height(100)
     }
   }
 }
