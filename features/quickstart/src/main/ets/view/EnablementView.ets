@@ -1,10 +1,11 @@
 import { ArticleClass } from '../model/ArticleClass';
 import { bufferToString } from '../util/BufferUtil';
-
+import { BreakpointType, BreakpointTypeEnum } from '@ohs/utils';
 // @Preview
 @Component
 export struct EnablementView {
   @State enablementList: Array<ArticleClass> = [];
+  @StorageProp('currentBreakpoint') currentBreakpoint: string = BreakpointTypeEnum.MD;
 
   aboutToAppear(): void {
     this.getEnablementDataFromJSON()
@@ -31,6 +32,7 @@ export struct EnablementView {
           GridItem() {
             EnablementItem({ enablementItem: item })
           }
+          .width(new BreakpointType<Length>({ sm: 160, md: 164, lg: 180 }).getValue(this.currentBreakpoint))
         }, (item: ArticleClass) => item.id)
       }
       .rowsTemplate('1fr')
@@ -38,7 +40,7 @@ export struct EnablementView {
       .scrollBar(BarState.Off)
       .height(169)
       .padding({ top: 2, left: 16, right: 16 })
-
+      .columnsGap(new BreakpointType<Length>({ sm: 8, md: 12, lg: 16 }).getValue(this.currentBreakpoint))
     }
     .margin({ top: 18 })
     .alignItems(HorizontalAlign.Start)

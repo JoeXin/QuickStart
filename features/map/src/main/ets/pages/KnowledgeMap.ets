@@ -3,10 +3,11 @@ import { NavBarItem, NavBarItemType}  from '../view/NavBarItem'
 import { Section, KnowledgeMapContent} from '../pages/KnowledgeMapContent'
 import { util } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
-
+import { BreakpointType, BreakpointTypeEnum } from '@ohs/utils';
 @Component
 export struct KnowledgeMap {
   @State message: string = 'Hello World';
+
   @State navBarList: NavBarItemType[]=[
     {
       order:'01',title:"准备与学习"
@@ -27,6 +28,7 @@ export struct KnowledgeMap {
   @State currentNavBarIndex:number=-1;
 
   @Provide('knowledgeMapPageStack') knowledgeMapPageStack:NavPathStack =new NavPathStack();
+
 
 
   @Builder
@@ -101,7 +103,7 @@ export struct KnowledgeMap {
     }
     .hideTitleBar(true)
     .navDestination(this.PageMap)
-    .mode(NavigationMode.Stack)
+    .mode(NavigationMode.Auto)
   }
 
 }

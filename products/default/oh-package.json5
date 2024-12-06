@@ -8,6 +8,7 @@
   "dependencies": {
     "@ohs/learning":"file:../../features/learning",
     "@ohs/map": "file:../../features/map",
-    "@ohs/quickstart": "file:../../features/quickstart"
+    "@ohs/quickstart": "file:../../features/quickstart",
+    "@ohs/utils": "file:../../commons/utils"
   }
 }
